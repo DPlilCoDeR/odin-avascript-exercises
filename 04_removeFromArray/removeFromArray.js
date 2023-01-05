@@ -1,7 +1,10 @@
 const removeFromArray = function (numArray, ...deleteNum) {
-    const index = numArray.indexOf(...deleteNum);
-    numArray.splice(index, deleteNum.length);
-    console.log(deleteNum.length);
+    for (let i = 0; i < deleteNum.length; i++) {
+        if (numArray.some((element) => element == deleteNum[i])) {
+            let index = numArray.indexOf(deleteNum[i]);
+            numArray.splice(index, 1);
+        }
+    }
     return numArray;
 };
 
